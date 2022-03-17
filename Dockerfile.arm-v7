@@ -1,4 +1,4 @@
-FROM alpine:3.15.0
+FROM alpine:3.15.1
 
 ENV S6_REL=2.2.0.3 S6_ARCH=armhf TZ=Etc/UTC
 
