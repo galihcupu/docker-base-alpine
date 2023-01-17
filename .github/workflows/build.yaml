@@ -6,7 +6,7 @@ on:
     paths:
       - "Dockerfile.*"
       - "root/**"
-      - ".github/workflows/build.yml"
+      - ".github/workflows/build.yaml"
   schedule:
     - cron: "0 20 1,15 * 5"
 
