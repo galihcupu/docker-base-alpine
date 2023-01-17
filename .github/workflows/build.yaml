@@ -62,7 +62,7 @@ jobs:
         with:
           push: true
           attests: type=sbom,generator=image
-          sbom: true
+          #sbom: true
           provenance: true # https://github.com/docker/buildx/issues/1509
           platforms: ${{ steps.vars.outputs.platform }}
           file: ./Dockerfile.${{ steps.vars.outputs.file }}
