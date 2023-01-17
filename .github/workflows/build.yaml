@@ -42,7 +42,7 @@ jobs:
         with:
           install: true
           version: latest
-          driver-opts: image=moby/buildkit:v0.10.5
+          driver-opts: image=moby/buildkit:master # v0.10.5
 
       - name: Login to DockerHub
         uses: docker/login-action@v2.1.0
@@ -62,7 +62,7 @@ jobs:
         with:
           push: true
           sbom: true
-          provenance: true
+          provenance: false # https://github.com/docker/buildx/issues/1509
           platforms: ${{ steps.vars.outputs.platform }}
           file: ./Dockerfile.${{ steps.vars.outputs.file }}
           tags: |
