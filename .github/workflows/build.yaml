@@ -61,6 +61,7 @@ jobs:
         uses: docker/build-push-action@v3.3.0
         with:
           push: true
+          attests: type=sbom,generator=image
           sbom: true
           provenance: true # https://github.com/docker/buildx/issues/1509
           platforms: ${{ steps.vars.outputs.platform }}
