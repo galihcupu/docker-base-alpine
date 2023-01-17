@@ -62,9 +62,10 @@ jobs:
         with:
           push: true
           sbom: true
-          provenance: false # https://github.com/docker/buildx/issues/1509
+          provenance: true # https://github.com/docker/buildx/issues/1509
           platforms: ${{ steps.vars.outputs.platform }}
           file: ./Dockerfile.${{ steps.vars.outputs.file }}
+          build-args: BUILDKIT_SBOM_SCAN_CONTEXT=true,BUILDKIT_SBOM_SCAN_STAGE=true
           tags: |
             ${{ steps.vars.outputs.tag }}
             ghcr.io/${{ steps.vars.outputs.tag }}
